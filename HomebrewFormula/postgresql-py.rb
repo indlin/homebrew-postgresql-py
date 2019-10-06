@@ -10,9 +10,7 @@ class PostgresqlPy < Formula
   depends_on "openssl"
   depends_on "readline"
 
-  conflicts_with "postgres-xc",
-    :because => "postgresql and postgres-xc install the same binaries."
-  conflicts_with "postgres",
+   conflicts_with "postgres",
     :because => "postgresql-py and postgres install the same binaries."
 
   def install
