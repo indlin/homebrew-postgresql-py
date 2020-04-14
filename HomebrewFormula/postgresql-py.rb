@@ -1,8 +1,8 @@
 class PostgresqlPy < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v11.5/postgresql-11.5.tar.bz2"
-  sha256 "7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180"
+  url "https://ftp.postgresql.org/pub/source/v11.7/postgresql-11.7.tar.bz2"
+  sha256 "324ae93a8846fbb6a25d562d271bc441ffa8794654c5b2839384834de220a313"
   head "https://github.com/postgres/postgres.git"
 
   depends_on "pkg-config" => :build
