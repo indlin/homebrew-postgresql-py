@@ -10,13 +10,6 @@ class PostgresqlPy < Formula
   depends_on "openssl@1.1"
   depends_on "readline"
 
-  uses_from_macos "krb5"
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
-  uses_from_macos "openldap"
-  uses_from_macos "perl"
-  uses_from_macos "python2"
-
   conflicts_with "postgres",
     :because => "postgresql-py and postgres install the same binaries."
 
@@ -47,7 +40,7 @@ class PostgresqlPy < Formula
       --with-openssl
       --with-pam
       --with-perl
-      --with-python
+      --with-python3
       --with-uuid=e2fs
     ]
 
