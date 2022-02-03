@@ -8,6 +8,7 @@ class PostgresqlPy < Formula
   depends_on "pkg-config" => :build
   depends_on "icu4c"
   depends_on "openssl@1.1"
+  depends_on "python@3.10"
   depends_on "readline"
 
   conflicts_with "postgres",
@@ -17,8 +18,8 @@ class PostgresqlPy < Formula
     # avoid adding the SDK library directory to the linker search path
     ENV["XML2_CONFIG"] = "xml2-config --exec-prefix=/usr"
 
-    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
+    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib} -L#{Formula["python@3.10"].opt_lib}"
+    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include} -I#{Formula["python@3.10"].opt_include}"
 
     args = %W[
       --disable-debug
@@ -40,7 +41,7 @@ class PostgresqlPy < Formula
       --with-openssl
       --with-pam
       --with-perl
-      --with-python3
+      --with-python
       --with-uuid=e2fs
     ]
 
