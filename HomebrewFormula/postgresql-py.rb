@@ -1,8 +1,8 @@
 class PostgresqlPy < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v11.14/postgresql-11.14.tar.bz2"
-  sha256 "965c7f4be96fb64f9581852c58c4f05c3812d4ad823c0f3e2bdfe777c162f999"
+  url "https://ftp.postgresql.org/pub/source/v11.19/postgresql-11.19.tar.bz2"
+  sha256 "13109e2b71f1139405c27201da3733a61ace72ee1c228d9c9f0320e06aee14c2"
   head "https://github.com/postgres/postgres.git"
 
   depends_on "pkg-config" => :build
@@ -10,9 +10,6 @@ class PostgresqlPy < Formula
   depends_on "openssl@1.1"
   depends_on "python@3"
   depends_on "readline"
-
-  conflicts_with "postgres",
-    :because => "postgresql-py and postgres install the same binaries."
 
   def install
     # avoid adding the SDK library directory to the linker search path
